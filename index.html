@@ -1,6 +1,7 @@
-<html>
+ï»¿<html>
 	<head>
-		<title>AMPA Colegio Sagrado Corazón de Jesús de Meliana</title>
+	  <meta charset="UTF-8">
+	  <title>AMPA Colegio Sagrado CorazÃ³n de JesÃºs de Meliana</title>
 	</head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
@@ -49,10 +50,10 @@ h3 {
 		<li class="nav-item" :class="{active:selectedPage=='home'}">
         <a class="nav-link" href="#" @click="selectPage('home')" >Inicio <span class="sr-only">(current)</span></a>
       </li>
-	  <li class="nav-item" :class="{active:selectedPage=='quienes'}"> <a class="nav-link" href="#" @click="selectPage('quienes')">Quiénes somos</a></li>
-	  <li class="nav-item" :class="{active:selectedPage=='anuncios'}">  <a class="nav-link" href="#" @click="selectPage('anuncios')">Tablón de anuncios</a></li>
+	  <li class="nav-item" :class="{active:selectedPage=='quienes'}"> <a class="nav-link" href="#" @click="selectPage('quienes')">QuiÃ©nes somos</a></li>
+	  <li class="nav-item" :class="{active:selectedPage=='anuncios'}">  <a class="nav-link" href="#" @click="selectPage('anuncios')">TablÃ³n de anuncios</a></li>
 	  <li class="nav-item" :class="{active:selectedPage=='descargas'}"><a class="nav-link" href="#" @click="selectPage('descargas')" >Descargas</a></li>
-	  <li class="nav-item" :class="{active:selectedPage=='enlaces'}"><a class="nav-link" href="#" @click="selectPage('enlaces')">Enlaces de interés</a></li>
+	  <li class="nav-item" :class="{active:selectedPage=='enlaces'}"><a class="nav-link" href="#" @click="selectPage('enlaces')">Enlaces de interÃ©s</a></li>
         <li class="nav-item" :class="{active:selectedPage=='contacto'}"><a class="nav-link" href="#" @click="selectPage('contacto')">Contacto</a> </li>
     </ul>
   </div>
@@ -61,29 +62,29 @@ h3 {
   <div class="container">
 	  <div v-if="selectedPage=='home'">
 		<div class="jumbotron">
-			<h1>AMPA Colegio Sagrado Corazón de Jesús de Meliana</h1>
+			<h1>AMPA Colegio Sagrado CorazÃ³n de JesÃºs de Meliana</h1>
 		</div>
 
 		<h2>Bienvenidos a la web del AMPA</h2>
-		<p>Desde aquí queremos manteneros informados de las novedades del colegio y de la asociación de madres y padres</p>
+		<p>Desde aquÃ­ queremos manteneros informados de las novedades del colegio y de la asociaciÃ³n de madres y padres</p>
 
-		<h3><i class="fa fa-angle-double-right"></i> Aplicación de reserva de libros para el curso 2018-2019</h3>
+		<h3><i class="fa fa-angle-double-right"></i> AplicaciÃ³n de reserva de libros para el curso 2018-2019</h3>
 
-		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este año podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir los datos del alumno, madre y/o padre.</p>
-		<p>La aplicación os asignará un número de reserva que junto con el móvil que introduzcais os permitirá consultar más tarde la reserva</p>
+		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este aÃ±o podÃ©is reservar los libros de los alumnos del colegio a travÃ©s de una sencilla aplicaciÃ³n web. Al entrar podÃ©is elegir el curso y los libros a reservar, despuÃ©s debÃ©is introducir los datos del alumno, madre y/o padre.</p>
+		<p>La aplicaciÃ³n os asignarÃ¡ un nÃºmero de reserva que junto con el mÃ³vil que introduzcais os permitirÃ¡ consultar mÃ¡s tarde la reserva</p>
 	<a class="btn btn-primary" href="https://ampa-169f0.firebaseapp.com/">Ir a la web</a>
 
 	  </div>
 	  <div v-if="selectedPage=='anuncios'">
-		<h3><i class="fa fa-angle-double-right"></i> Aplicación de reserva de libros para el curso 2018-2019</h3>
+		<h3><i class="fa fa-angle-double-right"></i> AplicaciÃ³n de reserva de libros para el curso 2018-2019</h3>
 
-		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este año podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir los datos del alumno, madre y/o padre.</p>
-		<p>La aplicación os asignará un número de reserva que junto con el móvil que introduzcais os permitirá consultar más tarde la reserva</p>
+		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este aÃ±o podÃ©is reservar los libros de los alumnos del colegio a travÃ©s de una sencilla aplicaciÃ³n web. Al entrar podÃ©is elegir el curso y los libros a reservar, despuÃ©s debÃ©is introducir los datos del alumno, madre y/o padre.</p>
+		<p>La aplicaciÃ³n os asignarÃ¡ un nÃºmero de reserva que junto con el mÃ³vil que introduzcais os permitirÃ¡ consultar mÃ¡s tarde la reserva</p>
 	<a class="btn btn-primary" href="https://ampa-169f0.firebaseapp.com/">Ir a la web</a>
 	  </div>
 	  <div v-if="selectedPage=='enlaces'">
-		  <h3>ENLACES DE INTERÉS</h3>
-		  <p>Colegio Sagrado Corazón de Meliana</p>
+		  <h3>ENLACES DE INTERÃ‰S</h3>
+		  <p>Colegio Sagrado CorazÃ³n de Meliana</p>
 
 		  <h4>Ayuntamiento de Meliana</h4>
 		  <a href="http://www.meliana.es/">http://www.meliana.es/</a>
@@ -93,33 +94,33 @@ h3 {
 		  
 	  </div>
 	  <div v-if="selectedPage=='quienes'">
-		  <h2>Quiénes somos</h2>
-		  <p>La AMPA, o lo que es lo mismo, Asociación de Padres y Madres de Alumnos, es una organización sin ánimo de lucro, formada por padres, madres o tutores del alumnado del Colegio Sagrado Corazón de Meliana, que deciden inscribirse voluntariamente y pagar una cuota periódica. </p>
-		  <p>Una vez hecha la inscripción, se forma parte del AMPA hasta que finaliza la etapa escolar, o bien, hasta que se decida darse de baja por cualquier motivo.</p>
-		  <p>Acciones llevadas a cabo por el AMPA:</p>
-		  <p>Informativas: Las AMPA establecen vías de información entre el propio centro y las familias, utilizando para ello todos los recursos necesarios. Incluso estamos viendo una predilección por las nuevas tecnologías para crear un canal comunicativo eficaz. Esta información que se proporciona es relativa a la organización, legislación, instrucciones sobre cómo se desarrolla el curso, funcionamiento del consejo escolar, actividades, …</p>
-		  <p>Formativas: Otra de las funciones principales de esta asociación es la de formar a las familias en los criterios educativos, evolución de sus hijos y proyectos que se desarrollan tanto en el centro como en la etapa educativa en general. Es decir, que el AMPA trata de involucrar a los padres y madres en todo lo relativo a la educación de los alumnos.</p>
+		  <h2>QuiÃ©nes somos</h2>
+		<p>La AMPA, o lo que es lo mismo, AsociaciÃ³n de Padres y Madres de Alumnos, es una organizaciÃ³n sin Ã¡nimo de lucro, formada por padres, madres o tutores del alumnado del Colegio Sagrado CorazÃ³n de Meliana, que deciden inscribirse voluntariamente y pagar una cuota periÃ³dica.</p>
+<p>Una vez hecha la inscripciÃ³n, se forma parte del AMPA hasta que finaliza la etapa escolar, o bien, hasta que se decida darse de baja por cualquier motivo.</p>
+<p>Acciones llevadas a cabo por el AMPA:</p>
+<p><b>Informativas</b>: Las AMPA establecen vÃ­as de informaciÃ³n entre el propio centro y las familias, utilizando para ello todos los recursos necesarios. Incluso estamos viendo una predilecciÃ³n por las nuevas tecnologÃ­as para crear un canal comunicativo eficaz. Esta informaciÃ³n que se proporciona es relativa a la organizaciÃ³n, legislaciÃ³n, instrucciones sobre cÃ³mo se desarrolla el curso, funcionamiento del consejo escolar, actividades, â€¦</p>
+<p><b>Formativas</b>: Otra de las funciones principales de esta asociaciÃ³n es la de formar a las familias en los criterios educativos, evoluciÃ³n de sus hijos y proyectos que se desarrollan tanto en el centro como en la etapa educativa en general. Es decir, que el AMPA trata de involucrar a los padres y madres en todo lo relativo a la educaciÃ³n de los alumnos.</p>
 
 
 		  <p>Las funciones del Ampa, entre otras son:</p>
 		  <ul>
-			  <li>Favorecer la relación y coordinación entre las familias y el personal docente.</li>
-			  <li>Trabajar para mejorar la participación y el compromiso de los padres, hijos y de la sociedad en general, y de la educativa en particular.</li>
-			  <li>	Gestionar la adquisición de libros de texto.</li>
-			  <li>	Organizar y colaborar en actividades formativas, tales como charlas, semana cultural, fiesta fin de curso…etc., que favorecen la educación de nuestros hijos y facilitan el conocimiento y la relación entre las familias.</li>
+			  <li>Favorecer la relaciÃ³n y coordinaciÃ³n entre las familias y el personal docente.</li>
+			  <li>Trabajar para mejorar la participaciÃ³n y el compromiso de los padres, hijos y de la sociedad en general, y de la educativa en particular.</li>
+			  <li>	Gestionar la adquisiciÃ³n de libros de texto.</li>
+			  <li>	Organizar y colaborar en actividades formativas, tales como charlas, semana cultural, fiesta fin de curso etc., que favorecen la educaciÃ³n de nuestros hijos y facilitan el conocimiento y la relaciÃ³n entre las familias.</li>
 		  </ul>
-<p>No es obligatorio formar parte del AMPA, pero sí recomendable.</p>
+<p>No es obligatorio formar parte del AMPA, pero sÃ­ recomendable.</p>
 		  
 		  
 	  </div>
 	  <div v-if="selectedPage=='descargas'">
 		<h3><i class="fa fa-angle-double-right"></i> Estatutos del AMPA</h3>
-		<p>Puedes descargar los estatutos en <a href="estatutos.pdf">PDF pinchando aquí</a></p>
+		<p>Puedes descargar los estatutos en <a href="estatutos.pdf">PDF pinchando aquÃ­</a></p>
 	  </div>
 	  <div v-if="selectedPage=='contacto'">
 		  <div class="alert alert-primary">
-			  <h3>Asociación de madres y padres de alumnos<h3>
-			  <h4>Colegio Sagrado Corazón de Meliana</h4>
+			  <h3>AsociaciÃ³n de madres y padres de alumnos<h3>
+			  <h4>Colegio Sagrado CorazÃ³n de Meliana</h4>
 			  <div class="direccion">
 				  <p><i class="fa fa-home float-left"></i>&nbsp; C/Eduardo Romero, 6. 46133-Meliana</p>
 				  <p><i class="fa fa-envelope float-left"></i>&nbsp;E-Mail: ampasagradocorazonmeliana@gmail.com</p>
