@@ -22,9 +22,21 @@
 }
 
 .jumbotron {
-	background: url(rotus.jpg);
+	background: url(xhome.jpg);
+	background-size: cover;
+		/*
 	color: white;
 	text-shadow: 2px 2px rgba(0, 0, 0, .4);
+		*/
+}
+
+h1 {
+	font-size: 1.9rem;
+	text-align: center;
+	background: #e19756;
+	color: white;
+	margin: 0px 8px;
+	padding: 0.5rem;
 }
 
 h3 {
@@ -62,9 +74,10 @@ h3 {
 <main class="bd-masthead" id="content" role="main">
   <div class="container">
 	  <div v-if="selectedPage=='home'">
-		<div class="jumbotron">
-			<h1>AMPA Colegio Sagrado Corazón de Jesús de Meliana</h1>
-		</div>
+		  <img src="home.jpg" width="100%">
+  		<h1>AMPA Colegio Sagrado Coraz&oacute;n de Jes&uacute;s de Meliana</h1>
+
+		<p></p>
 
 		<h2>Bienvenidos a la web del AMPA</h2>
 		<p>Desde aquí queremos manteneros informados de las novedades del colegio y de la asociación de madres y padres</p>
