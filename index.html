@@ -15,6 +15,7 @@
 }
 .navbar {
 	background: #f0f0f0;
+	background: #7fcb4b;
 }
 
 .bd-masthead {
@@ -33,12 +34,18 @@
 h1 {
 	font-size: 1.9rem;
 	text-align: center;
-	background: #e19756;
+	background: #d38753;
 	color: white;
-	margin: 0px 8px;
+	margin: 0px 19px;
 	padding: 0.5rem;
 }
 
+.navbar a.nav-link {
+	color: white;
+}
+h2 {
+	color: #74be3e;
+}
 h3 {
 	margin-top:2rem;
 }
@@ -52,7 +59,7 @@ h3 {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <body>
 <div id="page">
-<nav class="navbar navbar-expand-lg navbar-light ">
+<nav class="navbar navbar-expand-lg ">
 	<a class="navbar-brand" href="#"><img src="logo.jpg" width="70"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -77,7 +84,8 @@ h3 {
 		  <img src="home.jpg" width="100%">
   		<h1>AMPA Colegio Sagrado Coraz&oacute;n de Jes&uacute;s de Meliana</h1>
 
-		<p></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
 
 		<h2>Bienvenidos a la web del AMPA</h2>
 		<p>Desde aquí queremos manteneros informados de las novedades del colegio y de la asociación de madres y padres</p>
@@ -95,6 +103,7 @@ h3 {
 		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este año podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir los datos del alumno, madre y/o padre.</p>
 		<p>La aplicación os asignará un número de reserva que junto con el móvil que introduzcais os permitirá consultar más tarde la reserva</p>
 	<a class="btn btn-primary" href="https://ampa-169f0.firebaseapp.com/">Ir a la web</a>
+		<p>&nbsp;</p>
 	  </div>
 	  <div v-if="selectedPage=='enlaces'">
 		  <h3>ENLACES DE INTERÉS</h3>
