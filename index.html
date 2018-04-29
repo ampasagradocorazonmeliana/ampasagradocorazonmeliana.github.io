@@ -12,6 +12,10 @@
 <style>
 .active {
 	font-weight: bolder;
+		color:white !important;
+}
+.navbar-light .navbar-nav .active>.nav-link {
+		color:white !important;
 }
 .navbar {
 	background: #f0f0f0;
@@ -40,7 +44,7 @@ h1 {
 	padding: 0.5rem;
 }
 
-.navbar a.nav-link {
+.navbar.navbar-light a.nav-link {
 	color: white;
 }
 h2 {
@@ -59,7 +63,7 @@ h3 {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <body>
 <div id="page">
-<nav class="navbar navbar-expand-lg ">
+<nav class="navbar navbar-expand-lg navbar-light ">
 	<a class="navbar-brand" href="#"><img src="logo.jpg" width="70"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
