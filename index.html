@@ -10,16 +10,21 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
 <style>
+.logoampa {
+	margin-right: 2rem;
+}
+.rightalign {
+	float: right;
+}
 .active {
 	font-weight: bolder;
-		color:white !important;
+	color: black;
 }
 .navbar-light .navbar-nav .active>.nav-link {
-		color:white !important;
+	color: black;
 }
 .navbar {
-	background: #f0f0f0;
-	background: #7fcb4b;
+	border-bottom: 8px solid #ff0300;
 }
 
 .bd-masthead {
@@ -45,10 +50,9 @@ h1 {
 }
 
 .navbar.navbar-light a.nav-link {
-	color: white;
 }
 h2 {
-	color: #74be3e;
+	color: #ff0300;
 }
 h3 {
 	margin-top:2rem;
@@ -64,7 +68,7 @@ h3 {
 <body>
 <div id="page">
 <nav class="navbar navbar-expand-lg navbar-light ">
-	<a class="navbar-brand" href="#"><img src="logo-verde-invertido.jpg" width="70"></a>
+	<a class="navbar-brand" href="#"><img class="logoampa" src="logo-ampa.png" width="120"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -75,12 +79,13 @@ h3 {
         <a class="nav-link" href="#" @click="selectPage('home')" >Inicio <span class="sr-only">(current)</span></a>
       </li>
 	  <li class="nav-item" :class="{active:selectedPage=='quienes'}"> <a class="nav-link" href="#" @click="selectPage('quienes')">Quiénes somos</a></li>
-	  <li class="nav-item" :class="{active:selectedPage=='anuncios'}">  <a class="nav-link" href="#" @click="selectPage('anuncios')">Tablón de anuncios</a></li>
+	  <li class="nav-item" :class="{active:selectedPage=='libros'}">  <a class="nav-link" href="#" @click="selectPage('libros')">APP libros</a></li>
 	  <li class="nav-item" :class="{active:selectedPage=='descargas'}"><a class="nav-link" href="#" @click="selectPage('descargas')" >Descargas</a></li>
 	  <li class="nav-item" :class="{active:selectedPage=='enlaces'}"><a class="nav-link" href="#" @click="selectPage('enlaces')">Enlaces de interés</a></li>
         <li class="nav-item" :class="{active:selectedPage=='contacto'}"><a class="nav-link" href="#" @click="selectPage('contacto')">Contacto</a> </li>
     </ul>
   </div>
+  <img src="logo-colegio.png" class="rightalign" width="80">
 </nav>
 <main class="bd-masthead" id="content" role="main">
   <div class="container">
@@ -150,7 +155,7 @@ h3 {
 	<p>&nbsp;</p>
 
 	  </div>
-	  <div v-if="selectedPage=='anuncios'">
+	  <div v-if="selectedPage=='libros'">
 		<h3><i class="fa fa-angle-double-right"></i> Aplicación de reserva de libros para el curso 2018-2019</h3>
 
 		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este a&ntilde;o podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir los datos del alumno, madre y/o padre.</p>
