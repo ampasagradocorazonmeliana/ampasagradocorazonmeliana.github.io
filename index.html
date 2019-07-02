@@ -1,136 +1,146 @@
 <html>
-	<head>
-	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>AMPA Colegio Sagrado Corazón de Meliana</title>
-	</head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMPA Colegio Sagrado Corazón de Meliana</title>
+</head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 
 <style>
-.logoampa {
-	margin-right: 2rem;
-}
-.rightalign {
-	float: right;
-}
-.active {
-	font-weight: bolder;
-	color: black;
-}
-.navbar-light .navbar-nav .active>.nav-link {
-	color: black;
-}
-.navbar {
-	border-bottom: 8px solid #ff0300;
-}
-
-.bd-masthead {
-	padding-top: 2rem;
-}
-
-.jumbotron {
-	background: url(xhome.jpg);
-	background-size: cover;
-		/*
+    .logoampa {
+        margin-right: 2rem;
+    }
+    
+    .rightalign {
+        float: right;
+    }
+    
+    .active {
+        font-weight: bolder;
+        color: black;
+    }
+    
+    .navbar-light .navbar-nav .active>.nav-link {
+        color: black;
+    }
+    
+    .navbar {
+        border-bottom: 8px solid #ff0300;
+    }
+    
+    .bd-masthead {
+        padding-top: 2rem;
+    }
+    
+    .jumbotron {
+        background: url(xhome.jpg);
+        background-size: cover;
+        /*
 	color: white;
 	text-shadow: 2px 2px rgba(0, 0, 0, .4);
 		*/
-}
-
-h1 {
-	font-size: 1.9rem;
-	text-align: center;
-	background: #d38753;
-	color: white;
-	margin: 0px 19px;
-	padding: 0.5rem;
-}
-
-.navbar.navbar-light a.nav-link {
-}
-h2 {
-	color: #ff0300;
-}
-h3 {
-	margin-top:2rem;
-}
-.direccion i {
-	font-size: 2rem;
-}
-.aviso {
-	margin: 2rem;
-	padding: 1rem;
-	background: #fffdd6;
-	font-weight: bolder;
-		border: 1px solid #ccc;
-}
+    }
+    
+    h1 {
+        font-size: 1.9rem;
+        text-align: center;
+        background: #d38753;
+        color: white;
+        margin: 0px 19px;
+        padding: 0.5rem;
+    }
+    
+    .navbar.navbar-light a.nav-link {}
+    
+    h2 {
+        color: #ff0300;
+    }
+    
+    h3 {
+        margin-top: 2rem;
+    }
+    
+    .direccion i {
+        font-size: 2rem;
+    }
+    
+    .aviso {
+        margin: 2rem;
+        padding: 1rem;
+        background: #fffdd6;
+        font-weight: bolder;
+        border: 1px solid #ccc;
+    }
 </style>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
 <body>
-<div id="page">
-<nav class="navbar navbar-expand-lg navbar-light ">
-	<a class="navbar-brand" href="#"><img class="logoampa" src="logo-ampa.png" width="120"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div id="page">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#"><img class="logoampa" src="logo-ampa.png" width="120"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-		<li class="nav-item" :class="{active:selectedPage=='home'}">
-        <a class="nav-link" href="#" @click="selectPage('home')" >Inicio <span class="sr-only">(current)</span></a>
-      </li>
-	  <li class="nav-item" :class="{active:selectedPage=='quienes'}"> <a class="nav-link" href="#" @click="selectPage('quienes')">Quiénes somos</a></li>
-	  <li class="nav-item" :class="{active:selectedPage=='libros'}">  <a class="nav-link" href="#" @click="selectPage('libros')">APP libros</a></li>
-	  <li class="nav-item" :class="{active:selectedPage=='descargas'}"><a class="nav-link" href="#" @click="selectPage('descargas')" >Descargas</a></li>
-	  <li class="nav-item" :class="{active:selectedPage=='enlaces'}"><a class="nav-link" href="#" @click="selectPage('enlaces')">Enlaces de interés</a></li>
-        <li class="nav-item" :class="{active:selectedPage=='contacto'}"><a class="nav-link" href="#" @click="selectPage('contacto')">Contacto</a> </li>
-    </ul>
-  </div>
-  <img src="logo-colegio.png" class="rightalign" width="80">
-</nav>
-<main class="bd-masthead" id="content" role="main">
-  <div class="container">
-	  <div v-if="selectedPage=='home'">
-		  <img src="home.jpg" width="100%">
-  		<h1>AMPA Colegio Sagrado Coraz&oacute;n de Meliana</h1>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item" :class="{active:selectedPage=='home'}">
+                        <a class="nav-link" href="#" @click="selectPage('home')">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" :class="{active:selectedPage=='quienes'}"> <a class="nav-link" href="#" @click="selectPage('quienes')">Quiénes somos</a></li>
+                    <li class="nav-item" :class="{active:selectedPage=='libros'}"> <a class="nav-link" href="#" @click="selectPage('libros')">APP libros</a></li>
+                    <li class="nav-item" :class="{active:selectedPage=='descargas'}"><a class="nav-link" href="#" @click="selectPage('descargas')">Descargas</a></li>
+                    <li class="nav-item" :class="{active:selectedPage=='enlaces'}"><a class="nav-link" href="#" @click="selectPage('enlaces')">Enlaces de interés</a></li>
+                    <li class="nav-item" :class="{active:selectedPage=='contacto'}"><a class="nav-link" href="#" @click="selectPage('contacto')">Contacto</a> </li>
+                </ul>
+            </div>
+            <img src="logo-colegio.png" class="rightalign" width="80">
+        </nav>
+        <main class="bd-masthead" id="content" role="main">
+            <div class="container">
+                <div v-if="selectedPage=='home'">
+                    <img src="home.jpg" width="100%">
+                    <h1>AMPA Colegio Sagrado Coraz&oacute;n de Meliana</h1>
 
-		<p>&nbsp;</p>
-		<p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
 
-		<h2>Bienvenidos a la web del AMPA</h2>
-		<p>Desde aquí queremos manteneros informados de las novedades del colegio y de la asociaci&oacute;n de madres y padres.</p>
+                    <h2>Bienvenidos a la web del AMPA</h2>
+                    <p>Desde aquí queremos manteneros informados de las novedades del colegio y de la asociaci&oacute;n de madres y padres.</p>
 
 
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Actividad de la ONG Proyso, Sábado 4 de Abril 2019</h3>
-		<p><img src="miracles_san_vicent.jpg"></p>
+                    <h3><i class="fa fa-angle-double-right"></i>&nbsp;Actividad de la ONG Proyso, Sábado 4 de Abril 2019</h3>
+                    <p><img src="miracles_san_vicent.jpg"></p>
 
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Campaña #yoelijo 2019 sobre la libertad en la enseñanza</h3>
-		<p>Podéis descargar el documento informativo en PDF <a href="yoelijo.pdf">aquí</a></p>
+                    <h3><i class="fa fa-angle-double-right"></i>&nbsp;Campaña #yoelijo 2019 sobre la libertad en la enseñanza</h3>
+                    <p>Podéis descargar el documento informativo en PDF <a href="yoelijo.pdf">aquí</a></p>
 
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Fallas 2019</h3>
-		<p><img src="fallas2019-1.jpg" width="50%"></p>
-		<p><img src="fallas2019-2.jpg" width="50%"></p>
-		<p><img src="fallas2019-3.jpg" width="50%"></p>
-		<p><img src="fallas2019-4.jpg" width="50%"></p>
+                    <h3><i class="fa fa-angle-double-right"></i>&nbsp;Fallas 2019</h3>
+                    <p><img src="fallas2019-1.jpg" width="50%"></p>
+                    <p><img src="fallas2019-2.jpg" width="50%"></p>
+                    <p><img src="fallas2019-3.jpg" width="50%"></p>
+                    <p><img src="fallas2019-4.jpg" width="50%"></p>
 
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Asamblea general Diciembre 2018</h3>
-		<p>El 12/12/2018 se lleva a cabo una Asamblea general y Ponencia "Bases para una correcta alimantación". Aquí el comunicado en <a href="asamblea2018.pdf">PDF</a></p>
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;¡FELIZ DÍA DEL MAESTRO!</h3>
-		<p>Hoy se celebra el Día Internacional del Maestro y, por ello, y en línea con el proyecto del centro "Vida Saludable", hemos querido celebrar con los profesores de nuestros hijos este acontecimiento, agradeciendo de esta manera la labor que desarrollan.</p>
-		<a href="maestro1.jpg"><img src="maestro1.jpg" width="45%"/></a>
-		<a href="maestro2.jpg"><img src="maestro2.jpg" width="45%"/></a>
-		<br/>
+                    <h3><i class="fa fa-angle-double-right"></i>&nbsp;Asamblea general Diciembre 2018</h3>
+                    <p>El 12/12/2018 se lleva a cabo una Asamblea general y Ponencia "Bases para una correcta alimantación". Aquí el comunicado en <a href="asamblea2018.pdf">PDF</a></p>
+                    <h3><i class="fa fa-angle-double-right"></i>&nbsp;¡FELIZ DÍA DEL MAESTRO!</h3>
+                    <p>Hoy se celebra el Día Internacional del Maestro y, por ello, y en línea con el proyecto del centro "Vida Saludable", hemos querido celebrar con los profesores de nuestros hijos este acontecimiento, agradeciendo de esta manera la labor
+                        que desarrollan.</p>
+                    <a href="maestro1.jpg"><img src="maestro1.jpg" width="45%" /></a>
+                    <a href="maestro2.jpg"><img src="maestro2.jpg" width="45%" /></a>
+                    <br/>
 
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;COMUNICACIÓN DEL COLEGIO SOBRE EL UNIFORME DEPORTIVO</h3>
-		<p>El colegio ha emitido un comunicado sobre la situación del nuevo uniforme deportivo. Lo podéis obtener <a href="uniforme_2018.pdf">aquí</a>.
-		<p>El texto dice:</p>
-		<pre>
+                    <h3><i class="fa fa-angle-double-right"></i>&nbsp;COMUNICACIÓN DEL COLEGIO SOBRE EL UNIFORME DEPORTIVO</h3>
+                    <p>El colegio ha emitido un comunicado sobre la situación del nuevo uniforme deportivo. Lo podéis obtener <a href="uniforme_2018.pdf">aquí</a>.
+                        <p>El texto dice:</p>
+                        <pre>
 Meliana, 3 de septiembre 2018
 Estimadas familias,
 Nos ponemos en comunicación con vosotros por la situación
@@ -153,172 +163,186 @@ podido ocasionar.
 Atentamente,
 La dirección</pre>
 
-		<h3>Presentación AMPA 2018</h3>
-		<p>Aquí podéis descargar la presentación del AMPA para el curso 2018-2019. <a href="Presentacion-AMPA-sept18.pptx">Descargar</a></p>
+                        <h3>Presentación AMPA 2018</h3>
+                        <p>Aquí podéis descargar la presentación del AMPA para el curso 2018-2019. <a href="Presentacion-AMPA-sept18.pptx">Descargar</a></p>
 
-		<h3><i class="fa fa-angle-double-right"></i>&nbsp;INSTRUCCIONES PARA LA RESERVA Y POSTERIOR RECOGIDA DE LIBROS DE TEXTO</h3>
-		<h4>Reserva de libros</h4>
-		<p>Se realizará a través de la web, desde el día 25 de junio hasta el 15 de julio. Todas las reservas realizadas con posterioridad a esta fecha pueden sufrir retraso en la entrega de libros.</p>
-		<p>Para quien no disponga de medios, el día 9 de julio de 18:00 a 20:00 h se habilitará ordenadores en el Centro para efectuar la reserva.</p>
-		<p>Al confirmar la reserva se genera un “código de reserva” el cual debe figurar con claridad, junto al nombre del alumno, al efectuar el pago de los libros.</p>
-		<p>Nota: El material de Tecnología de los cursos de ESO se abonará en efectivo en el Centro los días de recogida de libros, siendo el importe de 30€.</p>
+                        <h3><i class="fa fa-angle-double-right"></i>&nbsp;INSTRUCCIONES PARA LA RESERVA Y POSTERIOR RECOGIDA DE LIBROS DE TEXTO</h3>
+                        <h4>Reserva de libros</h4>
+                        <p>Se realizará a través de la web, desde el día 25 de junio hasta el 15 de julio. Todas las reservas realizadas con posterioridad a esta fecha pueden sufrir retraso en la entrega de libros.</p>
+                        <p>Para quien no disponga de medios, el día 9 de julio de 18:00 a 20:00 h se habilitará ordenadores en el Centro para efectuar la reserva.</p>
+                        <p>Al confirmar la reserva se genera un “código de reserva” el cual debe figurar con claridad, junto al nombre del alumno, al efectuar el pago de los libros.</p>
+                        <p>Nota: El material de Tecnología de los cursos de ESO se abonará en efectivo en el Centro los días de recogida de libros, siendo el importe de 30€.</p>
 
-		<h4>Cuota del AMPA</h4>
-		<p>La cuota del AMPA asciende a 25€ el primer hijo matriculado y 5€ más si la familia tiene otros hijos matriculados, realizando el ingreso a nombre del hijo mayor matriculado.</p>
-		<p>Os recordamos que en diciembre y marzo pasaremos las cuotas de mantenimiento que ascienden a 20 euros por hijo matriculado.</p>
+                        <h4>Cuota del AMPA</h4>
+                        <p>La cuota del AMPA asciende a 25€ el primer hijo matriculado y 5€ más si la familia tiene otros hijos matriculados, realizando el ingreso a nombre del hijo mayor matriculado.</p>
+                        <p>Os recordamos que en diciembre y marzo pasaremos las cuotas de mantenimiento que ascienden a 20 euros por hijo matriculado.</p>
 
-		<h4>Pago de libros y cuota AMPA</h4>
-		<p>Transferencia bancaria o en efectivo en la cuenta que, a tal fin, tiene el AMPA:</p>
-		<p>Entidad:	<b>Caixa Popular.</b></p>
-		<p>Titular: 		<b>AMPA SAGRADO CORAZÓN MELIANA</b></p>
-		<p>C/C: 		<b>ES98-3159-0017-76-2256004827</b></p>
-		<p class="aviso">EL PLAZO MÁXIMO PARA TENER EFECTUADO EL INGRESO DEL PEDIDO Y DE LA CUOTA DE AMPA SERÁ EL 30 DE AGOSTO (INCLUSIVE).</p>
+                        <h4>Pago de libros y cuota AMPA</h4>
+                        <p>Transferencia bancaria o en efectivo en la cuenta que, a tal fin, tiene el AMPA:</p>
+                        <p>Entidad: <b>Caixa Popular.</b></p>
+                        <p>Titular: <b>AMPA SAGRADO CORAZÓN MELIANA</b></p>
+                        <p>C/C: <b>ES98-3159-0017-76-2256004827</b></p>
+                        <p class="aviso">EL PLAZO MÁXIMO PARA TENER EFECTUADO EL INGRESO DEL PEDIDO Y DE LA CUOTA DE AMPA SERÁ EL 30 DE AGOSTO (INCLUSIVE).</p>
 
-		<h4>RECOGIDA DE LIBROS DE TEXTO</h4>
+                        <h4>RECOGIDA DE LIBROS DE TEXTO</h4>
 
-		<p>Los libros se recogerán en el Centro los días miércoles 5 y jueves 6 de septiembre, de 18:00 a 20:00h.</p>
-		<p></p>
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Comunicación del Ayuntamiento para mejorar habilidades parentales de comunicación </h3>
-		<p>La Unidad de Prevención Comunitaria de Conductas Adictivas (UPCCA) del  Ayuntamiento continua ofreciendo este año formación dirigida a padres y  madres sobre como reforzar o mejorar habilidades parentales. Conscientes  de las dificultades que existen a la hora de asistir de forma presencial  a estos cursos, adjuntamos estos contenidos donde de aborda y  muestran estrategias para mejorar la comunicación con l@s hij@s,  facilitando así un clima de confianza como base de las relaciones  familiares.</p>
-		<p><a href="comunicacion_upcca_1.pdf">Documento 1</a></p>
-		<p><a href="comunicacion_upcca_2.pdf">Documento 2</a></p>
+                        <p>Los libros se recogerán en el Centro los días miércoles 5 y jueves 6 de septiembre, de 18:00 a 20:00h.</p>
+                        <p></p>
+                        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Comunicación del Ayuntamiento para mejorar habilidades parentales de comunicación </h3>
+                        <p>La Unidad de Prevención Comunitaria de Conductas Adictivas (UPCCA) del  Ayuntamiento continua ofreciendo este año formación dirigida a padres y  madres sobre como reforzar o mejorar habilidades parentales. Conscientes  de las dificultades
+                            que existen a la hora de asistir de forma presencial  a estos cursos, adjuntamos estos contenidos donde de aborda y  muestran estrategias para mejorar la comunicación con l@s hij@s,  facilitando así un clima de confianza como
+                            base de las relaciones  familiares.</p>
+                        <p><a href="comunicacion_upcca_1.pdf">Documento 1</a></p>
+                        <p><a href="comunicacion_upcca_2.pdf">Documento 2</a></p>
 
-        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Fotos de la cena de fin de curso 2018</h3>
-		<a href="fin_de_curso_2018_1.jpg"><img width="100" src="fin_de_curso_2018_1.jpg"/></a>
-		<a href="fin_de_curso_2018_2.jpg"><img width="100" src="fin_de_curso_2018_2.jpg"/></a>
-		<a href="fin_de_curso_2018_3.jpg"><img width="100" src="fin_de_curso_2018_3.jpg"/></a>
-		<a href="fin_de_curso_2018_4.jpg"><img width="100" src="fin_de_curso_2018_4.jpg"/></a>
-		<a href="fin_de_curso_2018_5.jpg"><img width="100" src="fin_de_curso_2018_5.jpg"/></a>
-        <h3><i class="fa fa-angle-double-right"></i>RESERVA LIBROS AMPA </h3>
-		<p>El próximo lunes 9 de julio, de 18 a 20h, estaremos en el colegio para quien quiera realizar desde allí la reserva de libros a través de la aplicación con ordenadores proporcionados por el Centro. También se resolverán dudas sobre la aplicación y/o reservas.</p>
+                        <h3><i class="fa fa-angle-double-right"></i>&nbsp;Fotos de la cena de fin de curso 2018</h3>
+                        <a href="fin_de_curso_2018_1.jpg"><img width="100" src="fin_de_curso_2018_1.jpg" /></a>
+                        <a href="fin_de_curso_2018_2.jpg"><img width="100" src="fin_de_curso_2018_2.jpg" /></a>
+                        <a href="fin_de_curso_2018_3.jpg"><img width="100" src="fin_de_curso_2018_3.jpg" /></a>
+                        <a href="fin_de_curso_2018_4.jpg"><img width="100" src="fin_de_curso_2018_4.jpg" /></a>
+                        <a href="fin_de_curso_2018_5.jpg"><img width="100" src="fin_de_curso_2018_5.jpg" /></a>
+                        <h3><i class="fa fa-angle-double-right"></i>RESERVA LIBROS AMPA </h3>
+                        <p>El próximo lunes 9 de julio, de 18 a 20h, estaremos en el colegio para quien quiera realizar desde allí la reserva de libros a través de la aplicación con ordenadores proporcionados por el Centro. También se resolverán dudas sobre
+                            la aplicación y/o reservas.</p>
 
-        <h3><i class="fa fa-angle-double-right"></i> Circular de fin de curso 2018</h3>
-        <p>El colegio ha publicado una circular de fin de curso con calendario de actos. La pod&eacute;is descargar en formato <a href="circular_fin_de_curso_2018.pdf">PDF</a></p>
+                        <h3><i class="fa fa-angle-double-right"></i> Circular de fin de curso 2018</h3>
+                        <p>El colegio ha publicado una circular de fin de curso con calendario de actos. La pod&eacute;is descargar en formato <a href="circular_fin_de_curso_2018.pdf">PDF</a></p>
 
 
 
 
-		<h3><i class="fa fa-angle-double-right"></i> AVISO IMPORTANTE ORGANIZACI&oacute;N CENA FIN D CURSO 15 JUNIO</h3>
-		<p>Con el fin de mejorar la organizacion de la cena de fin de curso, este año vamos a establecer algunos cambios que creemos que son necesarios para el bien común.</p>
+                        <h3><i class="fa fa-angle-double-right"></i> AVISO IMPORTANTE ORGANIZACI&oacute;N CENA FIN D CURSO 15 JUNIO</h3>
+                        <p>Con el fin de mejorar la organizacion de la cena de fin de curso, este año vamos a establecer algunos cambios que creemos que son necesarios para el bien común.</p>
 
-		<p>Una vez finalizado el festival para evitar las aglomeraciones y esperas innecesarias en la puerta vamos a organizarlo de la siguiente manera: </p>
+                        <p>Una vez finalizado el festival para evitar las aglomeraciones y esperas innecesarias en la puerta vamos a organizarlo de la siguiente manera: </p>
 
-		<p>Nos tendremos que apuntar en un listado, nos apuntaremos por familias diciendo cuántos somos por unidad familiar y en qué curso queremos sentarnos. Independientemente de que cada uno de nuestros hijos este en una mesa, pero hemos de indicarlo con el mismo nombre en cada lista.</p>
-		<p>Ejemplo, nosotros somos 4 pero no estaremos todos en la misma mesa...</p>
-		<b>LISTA 1 DE ESO</b>
-		<ul>
-			<li>Inma Ruiz 2+1alumno</li>
-		</ul>
-		<b>LISTA 4 PRIMARIA</b>
-		<ul>
-			<li>Inma Ruiz 1 alumno</li>
-		</ul>
-		<p><b>Los días para apuntarse serán el 28, 29, 30 y 31 de mayo de 9.30h a 10.30h y de 15.00h a 16.30h</b></p>
+                        <p>Nos tendremos que apuntar en un listado, nos apuntaremos por familias diciendo cuántos somos por unidad familiar y en qué curso queremos sentarnos. Independientemente de que cada uno de nuestros hijos este en una mesa, pero hemos
+                            de indicarlo con el mismo nombre en cada lista.</p>
+                        <p>Ejemplo, nosotros somos 4 pero no estaremos todos en la misma mesa...</p>
+                        <b>LISTA 1 DE ESO</b>
+                        <ul>
+                            <li>Inma Ruiz 2+1alumno</li>
+                        </ul>
+                        <b>LISTA 4 PRIMARIA</b>
+                        <ul>
+                            <li>Inma Ruiz 1 alumno</li>
+                        </ul>
+                        <p><b>Los días para apuntarse serán el 28, 29, 30 y 31 de mayo de 9.30h a 10.30h y de 15.00h a 16.30h</b></p>
 
-		<p>Una persona puede apuntar a varias familias, si no podéis acercaros.</p>
+                        <p>Una persona puede apuntar a varias familias, si no podéis acercaros.</p>
 
-		<p>El fin de esta nueva organización es garantizar que todo el mundo tenga su sitio reservado.</p>
+                        <p>El fin de esta nueva organización es garantizar que todo el mundo tenga su sitio reservado.</p>
 
-		<p>Una vez finalizado el festival se abandonará de inmediato el patio para que podamos montar las mesas con rapidez, solicitamos de cada clase uno o dos voluntarios para que se queden y ayuden en esta labor</p>
+                        <p>Una vez finalizado el festival se abandonará de inmediato el patio para que podamos montar las mesas con rapidez, solicitamos de cada clase uno o dos voluntarios para que se queden y ayuden en esta labor</p>
 
-		<p>Cualquier duda nos preguntéis </p>
-		<p>Un saludo</p>
-		<p>AMPA</p>
+                        <p>Cualquier duda nos preguntéis </p>
+                        <p>Un saludo</p>
+                        <p>AMPA</p>
 
-		<h3><i class="fa fa-angle-double-right"></i> Aplicación de reserva de libros para el curso 2018-2019</h3>
+                        <h3><i class="fa fa-angle-double-right"></i> Aplicación de reserva de libros para el curso 2018-2019</h3>
 
-		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este a&ntilde;o podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir los datos del alumno, madre y/o padre.</p>
-		<p>El DNI junto con el móvil que introduzcáis os permitirá consultar más tarde la reserva.</p>
+                        <p>
+                            <a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este a&ntilde;o podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir
+                            los datos del alumno, madre y/o padre.</p>
+                        <p>El DNI junto con el móvil que introduzcáis os permitirá consultar más tarde la reserva.</p>
+                        <a class="btn btn-primary" href="https://ampa-169f0.firebaseapp.com/">Reserva ahora</a>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+
+                </div>
+                <div v-if="selectedPage=='libros'">
+                    <h3><i class="fa fa-angle-double-right"></i> Aplicación de reserva de libros para el curso 2019-2020</h3>
+
+                    <p>
+                        <a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este a&ntilde;o podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir
+                        los datos del alumno, madre y/o padre.</p>
+                    <p>El DNI junto con el móvil que introduzcáis os permitirá consultar más tarde la reserva.</p>
+                    <!--
 	<a class="btn btn-primary" href="https://ampa-169f0.firebaseapp.com/">Reserva ahora</a>
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
+	-->
+                    <p>NO DISPONIBLE DE MOMENTO, SE HABILITARÁ EL 10 DE JULIO</p>
+                    <p>&nbsp;</p>
+                </div>
+                <div v-if="selectedPage=='enlaces'">
+                    <h3>ENLACES DE INTERÉS</h3>
+                    <p></p>
+                    <h4>Colegio Sagrado Corazón de Meliana</h4>
+                    <a href="https://www.sagradocorazonmeliana.com/">https://www.sagradocorazonmeliana.com</a>
 
-	  </div>
-	  <div v-if="selectedPage=='libros'">
-		<h3><i class="fa fa-angle-double-right"></i> Aplicación de reserva de libros para el curso 2018-2019</h3>
+                    <p></p>
+                    <p></p>
+                    <h4>Ayuntamiento de Meliana</h4>
+                    <a href="http://www.meliana.es/">http://www.meliana.es/</a>
 
-		<p><a style="float:left; margin:1rem" href="https://ampa-169f0.firebaseapp.com/"><img src="app.png" width="60"></a>Este a&ntilde;o podéis reservar los libros de los alumnos del colegio a través de una sencilla aplicación web. Al entrar podéis elegir el curso y los libros a reservar, después debéis introducir los datos del alumno, madre y/o padre.</p>
-		<p>El DNI junto con el móvil que introduzcáis os permitirá consultar más tarde la reserva.</p>
-	<a class="btn btn-primary" href="https://ampa-169f0.firebaseapp.com/">Reserva ahora</a>
-		<p>&nbsp;</p>
-	  </div>
-	  <div v-if="selectedPage=='enlaces'">
-		  <h3>ENLACES DE INTERÉS</h3>
-		  <p></p>
-		  <h4>Colegio Sagrado Corazón de Meliana</h4>
-		  <a href="https://www.sagradocorazonmeliana.com/">https://www.sagradocorazonmeliana.com</a>
+                    <p></p>
+                    <p></p>
+                    <h4>Instituto Municipal de Cultura de Meliana</h4>
+                    <a href="http://www.imcmeliana.com/">http://www.imcmeliana.com/</a>
 
-		  <p></p>
-		  <p></p>
-		  <h4>Ayuntamiento de Meliana</h4>
-		  <a href="http://www.meliana.es/">http://www.meliana.es/</a>
-
-		  <p></p>
-		  <p></p>
-		  <h4>Instituto Municipal de Cultura de Meliana</h4>
-		  <a href="http://www.imcmeliana.com/">http://www.imcmeliana.com/</a>
-		  
-	  </div>
-	  <div v-if="selectedPage=='quienes'">
-		  <h2>Quiénes somos</h2>
-		<p>La AMPA, o lo que es lo mismo, Asociación de Padres y Madres de Alumnos, es una organización sin ánimo de lucro, formada por padres, madres o tutores del alumnado del Colegio Sagrado Corazón de Meliana, que deciden inscribirse voluntariamente y pagar una cuota periódica.</p>
-<p>Una vez hecha la inscripción, se forma parte del AMPA hasta que finaliza la etapa escolar, o bien, hasta que se decida darse de baja por cualquier motivo.</p>
-<p>Acciones llevadas a cabo por el AMPA:</p>
-<p><b>Informativas</b>: Las AMPA establecen vías de información entre el propio centro y las familias, utilizando para ello todos los recursos necesarios. Incluso estamos viendo una predilección por las nuevas tecnologías para crear un canal comunicativo eficaz. Esta información que se proporciona es relativa a la organización, legislación, instrucciones sobre cómo se desarrolla el curso, funcionamiento del consejo escolar, actividades, …</p>
-<p><b>Formativas</b>: Otra de las funciones principales de esta asociación es la de formar a las familias en los criterios educativos, evolución de sus hijos y proyectos que se desarrollan tanto en el centro como en la etapa educativa en general. Es decir, que el AMPA trata de involucrar a los padres y madres en todo lo relativo a la educación de los alumnos.</p>
+                </div>
+                <div v-if="selectedPage=='quienes'">
+                    <h2>Quiénes somos</h2>
+                    <p>La AMPA, o lo que es lo mismo, Asociación de Padres y Madres de Alumnos, es una organización sin ánimo de lucro, formada por padres, madres o tutores del alumnado del Colegio Sagrado Corazón de Meliana, que deciden inscribirse voluntariamente
+                        y pagar una cuota periódica.</p>
+                    <p>Una vez hecha la inscripción, se forma parte del AMPA hasta que finaliza la etapa escolar, o bien, hasta que se decida darse de baja por cualquier motivo.</p>
+                    <p>Acciones llevadas a cabo por el AMPA:</p>
+                    <p><b>Informativas</b>: Las AMPA establecen vías de información entre el propio centro y las familias, utilizando para ello todos los recursos necesarios. Incluso estamos viendo una predilección por las nuevas tecnologías para crear un
+                        canal comunicativo eficaz. Esta información que se proporciona es relativa a la organización, legislación, instrucciones sobre cómo se desarrolla el curso, funcionamiento del consejo escolar, actividades, …</p>
+                    <p><b>Formativas</b>: Otra de las funciones principales de esta asociación es la de formar a las familias en los criterios educativos, evolución de sus hijos y proyectos que se desarrollan tanto en el centro como en la etapa educativa
+                        en general. Es decir, que el AMPA trata de involucrar a los padres y madres en todo lo relativo a la educación de los alumnos.</p>
 
 
-		  <p>Las funciones del Ampa, entre otras son:</p>
-		  <ul>
-			  <li>Favorecer la relación y coordinación entre las familias y el personal docente.</li>
-			  <li>Trabajar para mejorar la participación y el compromiso de los padres, hijos y de la sociedad en general, y de la educativa en particular.</li>
-			  <li>	Gestionar la adquisición de libros de texto.</li>
-			  <li>	Organizar y colaborar en actividades formativas, tales como charlas, semana cultural, fiesta fin de curso etc., que favorecen la educación de nuestros hijos y facilitan el conocimiento y la relación entre las familias.</li>
-		  </ul>
-<p>No es obligatorio formar parte del AMPA, pero sí recomendable.</p>
-		  
-		  
-	  </div>
-	  <div v-if="selectedPage=='descargas'">
-		<h3><i class="fa fa-angle-double-right"></i> Estatutos del AMPA</h3>
-		<p>Puedes descargar los estatutos en <a href="estatutos.pdf">PDF pinchando aquí</a></p>
-        <h3><i class="fa fa-angle-double-right"></i> Ponencia 09/05/18: "Educar en el uso de las redes sociales". </h3>
-        <p><img src="educadigital.jpg" style="float:left; margin: 5px">Ponente: D. Fernando Chust Piles, Socio de Educadigital.es, Consultor&iacute;a sobre temas de estrategia, tecnolog&iacute;as, comunicaci&oacute;n y formaci&oacute;n para el sector educativo. Miembro de la Junta Directiva de la Asociación PREF, dedicada a la orientaci&oacute;n familiar y matrimonial.
-		<p>En formato<a href="Educar_en_RRSS_2018.pdf">PDF</a></p>
-		<p>En video, en varias partes:</p>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/OBeC4bv7HQo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/3lnVZAvBRMM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/Dcs4qydsGlY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		
-	  </div>
-	  <div v-if="selectedPage=='contacto'">
-		  <div class="alert alert-primary">
-			  <h3>Asociación de madres y padres de alumnos<h3>
-			  <h4>Colegio Sagrado Corazón de Meliana</h4>
-			  <div class="direccion">
-				  <p><i class="fa fa-home float-left"></i>&nbsp; C/Eduardo Romero, 6. 46133-Meliana</p>
-				  <p><i class="fa fa-envelope float-left"></i>&nbsp;E-Mail: ampasagradocorazonmeliana@gmail.com</p>
-				</div>
-		  </div>
-	  </div>
-  </div>
-</main>
+                    <p>Las funciones del Ampa, entre otras son:</p>
+                    <ul>
+                        <li>Favorecer la relación y coordinación entre las familias y el personal docente.</li>
+                        <li>Trabajar para mejorar la participación y el compromiso de los padres, hijos y de la sociedad en general, y de la educativa en particular.</li>
+                        <li> Gestionar la adquisición de libros de texto.</li>
+                        <li> Organizar y colaborar en actividades formativas, tales como charlas, semana cultural, fiesta fin de curso etc., que favorecen la educación de nuestros hijos y facilitan el conocimiento y la relación entre las familias.</li>
+                    </ul>
+                    <p>No es obligatorio formar parte del AMPA, pero sí recomendable.</p>
 
-  </div>
+
+                </div>
+                <div v-if="selectedPage=='descargas'">
+                    <h3><i class="fa fa-angle-double-right"></i> Estatutos del AMPA</h3>
+                    <p>Puedes descargar los estatutos en <a href="estatutos.pdf">PDF pinchando aquí</a></p>
+                    <h3><i class="fa fa-angle-double-right"></i> Ponencia 09/05/18: "Educar en el uso de las redes sociales". </h3>
+                    <p><img src="educadigital.jpg" style="float:left; margin: 5px">Ponente: D. Fernando Chust Piles, Socio de Educadigital.es, Consultor&iacute;a sobre temas de estrategia, tecnolog&iacute;as, comunicaci&oacute;n y formaci&oacute;n para el
+                        sector educativo. Miembro de la Junta Directiva de la Asociación PREF, dedicada a la orientaci&oacute;n familiar y matrimonial.
+                        <p>En formato<a href="Educar_en_RRSS_2018.pdf">PDF</a></p>
+                        <p>En video, en varias partes:</p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/OBeC4bv7HQo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/3lnVZAvBRMM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/Dcs4qydsGlY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+                </div>
+                <div v-if="selectedPage=='contacto'">
+                    <div class="alert alert-primary">
+                        <h3>Asociación de madres y padres de alumnos
+                            <h3>
+                                <h4>Colegio Sagrado Corazón de Meliana</h4>
+                                <div class="direccion">
+                                    <p><i class="fa fa-home float-left"></i>&nbsp; C/Eduardo Romero, 6. 46133-Meliana</p>
+                                    <p><i class="fa fa-envelope float-left"></i>&nbsp;E-Mail: ampasagradocorazonmeliana@gmail.com</p>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
 </body>
 
 <script>
-new Vue({
-  el: '#page',
-  data: {
-	  selectedPage: 'home'
-  },
-  methods: {
-	  selectPage: function(select){
-		  this.selectedPage = select;
-	  }
-  }
-});
-
+    new Vue({
+        el: '#page',
+        data: {
+            selectedPage: 'home'
+        },
+        methods: {
+            selectPage: function(select) {
+                this.selectedPage = select;
+            }
+        }
+    });
 </script>
-
